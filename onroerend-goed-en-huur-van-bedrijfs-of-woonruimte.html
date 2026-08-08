@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onroerend Goed en Huur van Bedrijfs- of Woonruimte — Arno Diederen</title>
+<meta name="description" content="Onroerend Goed en Huur van Bedrijfs- of Woonruimte — mediation door Arno Diederen.">
+<!-- Real theme used licensed 'Georgia W01' / 'Helvetica Neue W01' webfonts (Typekit-hosted) — approximated with system Georgia + Helvetica/Arial. -->
+<style>
+
+  *{box-sizing:border-box;}
+  html, body{ height:100%; }
+  body{
+    margin:0; background-color:#7f7d70; color:#fff;
+    font-family:Georgia, 'Times New Roman', Times, serif; font-size:16px; line-height:1.35;
+  }
+  a{ color:#f80600; text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+
+  /* Full-bleed background photo — a fixed layer pinned to the viewport itself (not the
+     content box), so it always fills the screen edge-to-edge and never stretches or
+     crops oddly just because a page's text content happens to be tall. */
+  .bg-photo{
+    position:fixed; inset:0; z-index:0;
+    background:url('assets/bg_voorbeelden.jpg') 32% top no-repeat;
+    background-size:cover;
+  }
+  #wrap{
+    width:100%; min-height:100vh; position:relative; z-index:1;
+    display:flex; flex-direction:column;
+  }
+
+  /* Content sits in a centered column so proportions/positioning stay consistent;
+     the photo itself still spans the full width/height behind it. */
+  .inner{ width:100%; max-width:1024px; margin:0 auto; padding:clamp(20px,4vw,40px) clamp(16px,3vw,32px) 0; flex:1; display:flex; flex-direction:column; position:relative; z-index:1; }
+
+  #title-area{ width:100%; text-align:center; }
+  #title{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:clamp(1.15rem, 1rem + 1.6vw, 1.5625rem);
+    line-height:1.25; text-align:center; color:#fff; text-decoration:none; display:block;
+  }
+  #description{ font-size:clamp(0.8rem, 0.7rem + 0.5vw, 1rem); color:#fff; margin-top:2px; }
+
+  .menu-primary{ display:block; text-align:center; margin:clamp(8px,1.5vw,10px) auto 0; padding:0; list-style:none; }
+  .menu-primary li{ display:inline-block; list-style-type:none; }
+  .menu-primary a{
+    border-right:1px solid #fff; color:#fff; display:inline-block; padding:0 clamp(5px,1vw,8px);
+    font-family:Helvetica, Arial, sans-serif; font-size:clamp(0.68rem, 0.6rem + 0.35vw, 0.875rem); line-height:1.6;
+    text-transform:uppercase; text-decoration:none;
+  }
+  .menu-primary li:last-child a{ border:none; }
+  .menu-primary a:hover, .menu-primary a.current{ color:#f80600; }
+
+  /* Home quotes — 3 quotes stacked in a right-hand column, clear of the person in the photo */
+  .quote{ width:clamp(200px, 38vw, 400px); display:block; }
+  .quote p{ font-size:clamp(1.05rem, 0.85rem + 2.1vw, 1.875rem); line-height:1.15em; text-align:center; font-style:italic; margin:0; color:#fff; }
+  #quote-1{ float:right; clear:both; margin:clamp(24px,7vw,72px) clamp(24px,4.5vw,46px) 0 0; }
+  #quote-2{ float:right; clear:both; margin:clamp(18px,4vw,40px) clamp(24px,4.5vw,46px) 0 0; }
+  #quote-3{ float:right; clear:both; margin:clamp(18px,4vw,40px) clamp(24px,4.5vw,46px) 0 0; }
+  main#content{ flex:1; position:relative; }
+
+  /* Inner-page content — positioned in the clear wall space (right side) of each real photo,
+     scaling proportionally instead of jumping at a breakpoint. */
+  .page-content{
+    width:clamp(240px, 42vw, 430px); margin:clamp(50px,14.6vw,150px) clamp(16px,5.9vw,60px) clamp(30px,6vw,60px) auto;
+    padding:clamp(16px,2.7vw,28px) clamp(16px,3vw,30px);
+    background:linear-gradient(135deg, rgba(20,20,18,0.42), rgba(20,20,18,0.26));
+    border-radius:2px;
+  }
+  .page-content p, .page-content li{ margin:0 0 clamp(14px,1.6vw,22px); font-size:clamp(0.95rem, 0.85rem + 0.4vw, 1.0625rem); line-height:1.5; color:#fff; }
+  .page-content p:last-child{ margin-bottom:0; }
+  .page-content p big{ font-size:clamp(1.2rem, 1rem + 1vw, 1.625rem); display:block; margin-bottom:6px; }
+  .page-content .result-label strong{ font-size:clamp(1rem, 0.9rem + 0.5vw, 1.15rem); }
+  .page-content ul{ margin:0 0 clamp(14px,1.6vw,22px); padding-left:1.15em; }
+  .page-content li{ margin-bottom:10px; }
+  .page-content li:last-child{ margin-bottom:0; }
+  .page-content em{ opacity:.8; font-style:italic; }
+  .page-content .credit{ font-size:0.75rem; line-height:1.2em; opacity:.85; margin-top:clamp(18px,2vw,28px); }
+  .page-content .contact-block{ font-size:clamp(1rem, 0.9rem + 0.5vw, 1.1875rem); line-height:1.5; }
+  .page-content .contact-block .addr{ margin-bottom:clamp(16px,2vw,24px); }
+  .page-content a{ color:#fff; text-decoration:underline; }
+  .page-content a:hover{ color:#f80600; }
+  .back-link{ display:inline-block; margin-bottom:clamp(12px,1.6vw,18px); font-family:Helvetica, Arial, sans-serif; font-size:.85rem; text-transform:uppercase; letter-spacing:.04em; color:#fff; opacity:.85; text-decoration:none; }
+  .back-link:hover{ color:#f80600; opacity:1; }
+
+  /* Topic links — the real category list from the original aanpak page, overlaid
+     left side of the photo, right-aligned, uppercase (same style family as the nav). */
+  .topic-links{
+    position:absolute; left:0; top:clamp(260px, 42vw, 460px); width:clamp(220px, 46vw, 480px);
+    text-align:right; padding-right:clamp(10px, 2vw, 24px);
+  }
+  .topic-links ul{ list-style:none; margin:0; padding:0; }
+  .topic-links li{ margin:0 0 clamp(4px,0.6vw,8px); }
+  .topic-links a{
+    color:#fff; text-decoration:none; text-transform:uppercase;
+    font-family:Helvetica, Arial, sans-serif; font-size:clamp(0.72rem, 0.6rem + 0.7vw, 1.05rem);
+    line-height:1.4; letter-spacing:.01em;
+  }
+  .topic-links a:hover{ color:#f80600; text-decoration:none; }
+
+  @media (max-width: 720px){
+    .topic-links{ position:static; width:100%; text-align:center; padding:20px 16px 0; }
+  }
+
+  @media (max-width: 560px){
+    .page-content{ width:100%; margin:20px 0 0; }
+  }
+  @media (max-width: 480px){
+    .quote{
+      width:78vw; margin-right:4vw !important;
+      background:linear-gradient(135deg, rgba(20,20,18,0.48), rgba(20,20,18,0.3));
+      padding:12px 16px; border-radius:2px;
+    }
+  }
+
+</style>
+</head>
+<body class="voorbeelden">
+
+<div id="wrap">
+  <div class="bg-photo"></div>
+  <div class="inner">
+  <header id="header">
+    <div id="title-area">
+      <a href="index.html" id="title">Arno Diederen&nbsp; Legal mediator</a>
+      <p id="description">Conflictoplossing door een ervaren bemiddelaar</p>
+    </div>
+    <nav class="menu-primary" aria-label="Hoofdmenu">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="mediator.html">MEDIATOR EN VOORMALIG ADVOCAAT</a></li>
+        <li><a href="aanpak.html">AANPAK</a></li>
+        <li><a href="contact.html">CONTACT &amp; CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <div class="page-content">
+      <a href="aanpak.html" class="back-link">&larr; Terug naar Aanpak</a>
+      <p>Bij vastgelopen onderhandelingen over onroerend goed blijkt toch vaak dat onderhandelingen vanwege een positionele insteek zijn vastgelopen waar integratief onderhandelen misschien nog kansen had geboden. Partijen met grote financiële belangen staan al gauw met een alles-of niets vordering voor de onvoorspelbare rechter, vaak in een kort geding waarbij men geen enkele controle meer heeft over de uitkomst. Partijen die 'er uit willen komen' en ook zelf controle over het resultaat willen houden doen er verstandig aan hun systeem van overleg te veranderen door er een neutrale derde met conflictoplossingsvaardigheden aan toe te voegen. Ik ga dan vaak over en weer vertrouwelijk over de no-go areas overleggen zonder dat de andere partij die leert kennen. Daardoor ontdek ik  vaak waar nog mogelijkheden zitten en kan ik het overleg leiden naar waar nog kansen liggen die anders niet aan bod zouden zijn gekomen.</p>
+      <p>In mediation bij huurgeschillen zoek ik met partijen naar een snelle werkbare oplossing voor eigenaars, investeerders,huurders en andere betrokkenen. Er is vaak een grote belangentegenstelling tussen enerzijds investeringen rendabel maken/houden en anderzijds het schaarste regulerende huurrecht van bedrijfs- of woonruimte. Onderhandelingen breken vaak al snel af als er puur positioneel onderhandeld wordt, en de uitkomst van een daarop volgende rechterlijke procedure is vaak niet voorspelbaar. Met mediation kan vaak beter een afweging gemaakt worden die</p>
+      <p>In mijn vroegere litigationpraktijk heb ik de Rechtbank- en Hofprocedures gevoerd die tot HR 05-11-1993, NJ 1994, 228 hebben geleid, een van de standaardarresten van de Hoge Raad over de gemengde huurovereenkomst.</p>
+      <p>Ik bemiddel niet in burengeschillen.</p>
+    </div>
+  </main>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aanpak — Arno Diederen</title>
+<meta name="description" content="De werkwijze van Arno Diederen als mediator.">
+<!-- Real theme used licensed 'Georgia W01' / 'Helvetica Neue W01' webfonts (Typekit-hosted) — approximated with system Georgia + Helvetica/Arial. -->
+<style>
+
+  *{box-sizing:border-box;}
+  html, body{ height:100%; }
+  body{
+    margin:0; background-color:#7f7d70; color:#fff;
+    font-family:Georgia, 'Times New Roman', Times, serif; font-size:16px; line-height:1.35;
+  }
+  a{ color:#f80600; text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+
+  /* Full-bleed background photo — a fixed layer pinned to the viewport itself (not the
+     content box), so it always fills the screen edge-to-edge and never stretches or
+     crops oddly just because a page's text content happens to be tall. */
+  .bg-photo{
+    position:fixed; inset:0; z-index:0;
+    background:url('assets/bg_voorbeelden.jpg') 32% top no-repeat;
+    background-size:cover;
+  }
+  #wrap{
+    width:100%; min-height:100vh; position:relative; z-index:1;
+    display:flex; flex-direction:column;
+  }
+
+  /* Content sits in a centered column so proportions/positioning stay consistent;
+     the photo itself still spans the full width/height behind it. */
+  .inner{ width:100%; max-width:1024px; margin:0 auto; padding:clamp(20px,4vw,40px) clamp(16px,3vw,32px) 0; flex:1; display:flex; flex-direction:column; position:relative; z-index:1; }
+
+  #title-area{ width:100%; text-align:center; }
+  #title{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:clamp(1.15rem, 1rem + 1.6vw, 1.5625rem);
+    line-height:1.25; text-align:center; color:#fff; text-decoration:none; display:block;
+  }
+  #description{ font-size:clamp(0.8rem, 0.7rem + 0.5vw, 1rem); color:#fff; margin-top:2px; }
+
+  .menu-primary{ display:block; text-align:center; margin:clamp(8px,1.5vw,10px) auto 0; padding:0; list-style:none; }
+  .menu-primary li{ display:inline-block; list-style-type:none; }
+  .menu-primary a{
+    border-right:1px solid #fff; color:#fff; display:inline-block; padding:0 clamp(5px,1vw,8px);
+    font-family:Helvetica, Arial, sans-serif; font-size:clamp(0.68rem, 0.6rem + 0.35vw, 0.875rem); line-height:1.6;
+    text-transform:uppercase; text-decoration:none;
+  }
+  .menu-primary li:last-child a{ border:none; }
+  .menu-primary a:hover, .menu-primary a.current{ color:#f80600; }
+
+  /* Home quotes — 3 quotes stacked in a right-hand column, clear of the person in the photo */
+  .quote{ width:clamp(200px, 38vw, 400px); display:block; }
+  .quote p{ font-size:clamp(1.05rem, 0.85rem + 2.1vw, 1.875rem); line-height:1.15em; text-align:center; font-style:italic; margin:0; color:#fff; }
+  #quote-1{ float:right; clear:both; margin:clamp(24px,7vw,72px) clamp(24px,4.5vw,46px) 0 0; }
+  #quote-2{ float:right; clear:both; margin:clamp(18px,4vw,40px) clamp(24px,4.5vw,46px) 0 0; }
+  #quote-3{ float:right; clear:both; margin:clamp(18px,4vw,40px) clamp(24px,4.5vw,46px) 0 0; }
+  main#content{ flex:1; position:relative; }
+
+  /* Inner-page content — positioned in the clear wall space (right side) of each real photo,
+     scaling proportionally instead of jumping at a breakpoint. */
+  .page-content{
+    width:clamp(240px, 42vw, 430px); margin:clamp(50px,14.6vw,150px) clamp(16px,5.9vw,60px) clamp(30px,6vw,60px) auto;
+    padding:clamp(16px,2.7vw,28px) clamp(16px,3vw,30px);
+    background:linear-gradient(135deg, rgba(20,20,18,0.42), rgba(20,20,18,0.26));
+    border-radius:2px;
+  }
+  .page-content p, .page-content li{ margin:0 0 clamp(14px,1.6vw,22px); font-size:clamp(0.95rem, 0.85rem + 0.4vw, 1.0625rem); line-height:1.5; color:#fff; }
+  .page-content p:last-child{ margin-bottom:0; }
+  .page-content p big{ font-size:clamp(1.2rem, 1rem + 1vw, 1.625rem); display:block; margin-bottom:6px; }
+  .page-content .result-label strong{ font-size:clamp(1rem, 0.9rem + 0.5vw, 1.15rem); }
+  .page-content ul{ margin:0 0 clamp(14px,1.6vw,22px); padding-left:1.15em; }
+  .page-content li{ margin-bottom:10px; }
+  .page-content li:last-child{ margin-bottom:0; }
+  .page-content em{ opacity:.8; font-style:italic; }
+  .page-content .credit{ font-size:0.75rem; line-height:1.2em; opacity:.85; margin-top:clamp(18px,2vw,28px); }
+  .page-content .contact-block{ font-size:clamp(1rem, 0.9rem + 0.5vw, 1.1875rem); line-height:1.5; }
+  .page-content .contact-block .addr{ margin-bottom:clamp(16px,2vw,24px); }
+  .page-content a{ color:#fff; text-decoration:underline; }
+  .page-content a:hover{ color:#f80600; }
+  .back-link{ display:inline-block; margin-bottom:clamp(12px,1.6vw,18px); font-family:Helvetica, Arial, sans-serif; font-size:.85rem; text-transform:uppercase; letter-spacing:.04em; color:#fff; opacity:.85; text-decoration:none; }
+  .back-link:hover{ color:#f80600; opacity:1; }
+
+  /* Topic links — the real category list from the original aanpak page, overlaid
+     left side of the photo, right-aligned, uppercase (same style family as the nav). */
+  .topic-links{
+    position:absolute; left:0; top:clamp(260px, 42vw, 460px); width:clamp(220px, 46vw, 480px);
+    text-align:right; padding-right:clamp(10px, 2vw, 24px);
+  }
+  .topic-links ul{ list-style:none; margin:0; padding:0; }
+  .topic-links li{ margin:0 0 clamp(4px,0.6vw,8px); }
+  .topic-links a{
+    color:#fff; text-decoration:none; text-transform:uppercase;
+    font-family:Helvetica, Arial, sans-serif; font-size:clamp(0.72rem, 0.6rem + 0.7vw, 1.05rem);
+    line-height:1.4; letter-spacing:.01em;
+  }
+  .topic-links a:hover{ color:#f80600; text-decoration:none; }
+
+  @media (max-width: 720px){
+    .topic-links{ position:static; width:100%; text-align:center; padding:20px 16px 0; }
+  }
+
+  @media (max-width: 560px){
+    .page-content{ width:100%; margin:20px 0 0; }
+  }
+  @media (max-width: 480px){
+    .quote{
+      width:78vw; margin-right:4vw !important;
+      background:linear-gradient(135deg, rgba(20,20,18,0.48), rgba(20,20,18,0.3));
+      padding:12px 16px; border-radius:2px;
+    }
+  }
+
+</style>
+</head>
+<body class="voorbeelden">
+
+<div id="wrap">
+  <div class="bg-photo"></div>
+  <div class="inner">
+  <header id="header">
+    <div id="title-area">
+      <a href="index.html" id="title">Arno Diederen&nbsp; Legal mediator</a>
+      <p id="description">Conflictoplossing door een ervaren bemiddelaar</p>
+    </div>
+    <nav class="menu-primary" aria-label="Hoofdmenu">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="mediator.html">MEDIATOR EN VOORMALIG ADVOCAAT</a></li>
+        <li><a href="aanpak.html">AANPAK</a></li>
+        <li><a href="contact.html">CONTACT &amp; CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <nav class="topic-links" aria-label="Onderwerpen">
+      <ul>
+        <li><a href="kunst-cultuur.html">Kunst & Cultuur</a></li>
+        <li><a href="ondernemer-en-mediation.html">ondernemer MKB / zakelijk</a></li>
+        <li><a href="echtscheiding-en-einde-samenwoning.html">Echtscheiding, partnerschap, samenwonen</a></li>
+        <li><a href="ontslag-en-samenwerking.html">Arbeid  Ontslag Teams Re-integratie</a></li>
+        <li><a href="maatschap-vof-cv.html">Maatschap VOF CV</a></li>
+        <li><a href="vereniging-stichting-corporatie.html">Vereniging stichting corporatie</a></li>
+        <li><a href="onderhandelen-en-dealmaking.html">Grensoverschrijdend / Internationaal</a></li>
+        <li><a href="onroerend-goed-huur-en-vve.html">Vereniging van eigenaren (VVE)</a></li>
+        <li><a href="erfenis-en-estate-plannig.html">Erfenis en Estate planning</a></li>
+        <li><a href="onroerend-goed-en-huur-van-bedrijfs-of-woonruimte.html">Onroerend Goed en Huur van Bedrijfs- of Woonruimte</a></li>
+        <li><a href="conflicten-en-de-overheid.html">Conflicten en de overheid</a></li>
+        <li><a href="interculturele-mediation.html">Interculturele mediation</a></li>
+        <li><a href="wat-anderen-vonden.html">Wat anderen vonden..</a></li>
+      </ul>
+    </nav>
+    <div class="page-content">
+      <p><big>Of een kwestie</big> nu zakelijk of privé is: steeds gaat het in de kern om een belangentegenstelling tussen individuen. Conflicten tussen zakelijke partners hebben echter een andere benadering nodig dan een langdurig verstoorde verhouding in de privé-sfeer. Een problematische werkverhouding vereist weer een andere insteek.</p>
+      <p>Als ervaren voormalig advocaat kan ik de juridische gevolgen duiden. Ik werk snel en efficiënt als mediator. In principe is mij na twee bijeenkomsten altijd wel duidelijk of partijen er uit kunnen komen. Als neutrale derde draag ik toch vaak de oplossing aan die bij alle partijen past. Ik zit dus niet achterover tot u er zelf uit komt, maar zie het als mijn taak u actief te begeleiden. Veel partijen loods ik zo zonder juridische begeleider door het traject. En als het juridisch complex is, kunnen advocaten van partijen mee aanschuiven. Een goede afstemming op de behoefte van partijen beperkt de kosten van een adequate oplossing tot het noodzakelijke.</p>
+    </div>
+  </main>
+  </div>
+</div>
+
+</body>
+</html>
