@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arno Diederen — Legal Mediator &amp; Advocaat</title>
+<meta name="description" content="Arno Diederen — MfN-registermediator en advocaat. 35 jaar ervaring, meer dan 1.000 zaken, nationaal en internationaal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#15130f;
+    --bg-alt:#1c1a15;
+    --surface:#1f1d17;
+    --ink:#f3efe4;
+    --muted:#c9c2ae;
+    --muted-2:#a39c88;
+    --gold:#b59e6a;
+    --gold-light:#d8c793;
+    --line:rgba(243,239,228,0.14);
+    --line-strong:rgba(181,158,106,0.45);
+    --serif:'Playfair Display', Georgia, serif;
+    --serif-2:'EB Garamond', Georgia, serif;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --maxw:1240px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans);
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  img{display:block; max-width:100%;}
+  a{color:inherit;}
+  .container{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  h1,h2,h3{font-family:var(--serif); font-weight:600; line-height:1.15; margin:0;}
+  :focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){ *{animation-duration:.001ms !important; transition-duration:.001ms !important; scroll-behavior:auto !important;} }
+
+  .rule{width:44px; height:1px; background:var(--gold); display:block;}
+  .eyebrow{
+    font-family:var(--sans); font-size:.74rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--gold-light); font-weight:600; display:flex; align-items:center; gap:14px;
+  }
+
+  /* ---------- Header nav ---------- */
+  header{
+    position:absolute; top:0; left:0; right:0; z-index:50; padding:28px 0;
+  }
+  .nav-wrap{display:flex; align-items:center; justify-content:space-between;}
+  .logo-mark{height:40px; width:auto; display:block;}
+  .nav-links{display:flex; gap:34px; list-style:none; margin:0; padding:0;}
+  .nav-links a{text-decoration:none; font-size:.85rem; letter-spacing:.03em; color:var(--muted); font-weight:500;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{
+    font-family:var(--sans); font-size:.82rem; font-weight:600; color:var(--bg);
+    background:var(--gold); padding:10px 20px; border-radius:2px; text-decoration:none; letter-spacing:.02em;
+  }
+  .nav-cta:hover{background:var(--gold-light);}
+  .menu-toggle{display:none; background:none; border:1px solid var(--line-strong); border-radius:2px; padding:9px 10px; cursor:pointer;}
+  .menu-toggle span{display:block; width:19px; height:1.5px; background:var(--ink); margin:4px 0;}
+  .mobile-menu{display:none; position:fixed; inset:0; background:var(--bg); z-index:100; padding:24px 28px; flex-direction:column;}
+  .mobile-menu.open{display:flex;}
+  .mobile-top{display:flex; justify-content:space-between; align-items:center;}
+  .mobile-menu ul{list-style:none; margin:56px 0 0; padding:0; display:flex; flex-direction:column; gap:28px;}
+  .mobile-menu a{font-family:var(--serif); font-size:1.5rem; text-decoration:none; color:var(--ink);}
+  .close-menu{background:none; border:none; color:var(--ink); font-size:1.6rem; cursor:pointer;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative; padding-top:0;
+    display:grid; grid-template-columns:1.15fr .85fr; min-height:100vh; align-items:stretch;
+  }
+  .hero-copy{
+    display:flex; flex-direction:column; justify-content:center; padding:150px 64px 90px 64px;
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(181,158,106,0.10), transparent 55%),
+      var(--bg);
+    position:relative;
+  }
+  .hero-copy h1{
+    font-size:clamp(2.6rem, 4.4vw, 4.1rem); margin-top:22px; letter-spacing:-.01em;
+  }
+  .hero-role{
+    font-family:var(--serif-2); font-style:italic; font-size:1.35rem; color:var(--gold-light); margin-top:14px;
+  }
+  .hero-desc{color:var(--muted); font-size:1.02rem; max-width:44ch; margin:26px 0 38px;}
+  .hero-actions{display:flex; align-items:center; gap:26px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px; font-family:var(--sans); font-weight:600; font-size:.9rem;
+    padding:15px 28px; text-decoration:none; border-radius:2px; letter-spacing:.02em; cursor:pointer; border:1px solid transparent;
+    transition:background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .btn-gold{background:var(--gold); color:#171510;}
+  .btn-gold:hover{background:var(--gold-light);}
+  .btn-line{border-color:var(--line-strong); color:var(--ink);}
+  .btn-line:hover{border-color:var(--gold); color:var(--gold-light);}
+
+  .hero-photo{
+    position:relative; overflow:hidden; border-left:1px solid var(--line-strong);
+  }
+  .hero-photo img{
+    width:100%; height:100%; object-fit:cover; object-position:center 20%; filter:saturate(0.92) contrast(1.03);
+  }
+  .hero-photo::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(21,19,15,0.05) 0%, rgba(21,19,15,0.55) 100%);
+  }
+  .plaque{
+    position:absolute; left:32px; bottom:32px; z-index:2;
+    background:rgba(21,19,15,0.82); border:1px solid var(--line-strong); backdrop-filter:blur(6px);
+    padding:16px 22px; max-width:280px;
+  }
+  .plaque p{
+    font-family:var(--serif-2); font-style:italic; font-size:.92rem; color:var(--gold-light); margin:0; line-height:1.5;
+  }
+
+  /* ---------- Stats ---------- */
+  .stats{
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--bg-alt);
+  }
+  .stats-row{
+    display:grid; grid-template-columns:repeat(4,1fr); padding:52px 0;
+  }
+  .stat{ padding:0 32px; border-left:1px solid var(--line); }
+  .stat:first-child{border-left:none;}
+  .stat .num{font-family:var(--serif); font-size:2.5rem; color:var(--gold-light); line-height:1;}
+  .stat .lbl{font-size:.86rem; color:var(--muted); margin-top:10px; max-width:20ch;}
+
+  /* ---------- Bio ---------- */
+  .bio{padding:110px 0;}
+  .bio-grid{display:grid; grid-template-columns:.7fr 1.3fr; gap:70px;}
+  .bio-grid h2{font-size:clamp(1.8rem,2.8vw,2.3rem); max-width:14ch;}
+  .bio-text p{color:var(--muted); font-size:1.08rem; max-width:64ch; margin:0 0 20px;}
+  .bio-text p:last-child{margin-bottom:0;}
+  .bio-text strong{color:var(--ink); font-weight:600;}
+  .credentials{margin-top:34px; display:flex; flex-wrap:wrap; gap:12px 0; list-style:none; padding:0;}
+  .credentials li{
+    font-size:.84rem; color:var(--muted-2); padding-right:22px; margin-right:22px; border-right:1px solid var(--line);
+  }
+  .credentials li:last-child{border-right:none; margin-right:0; padding-right:0;}
+
+  /* ---------- Specialisms tags ---------- */
+  .tags-section{padding:0 0 110px;}
+  .tags-head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:30px; flex-wrap:wrap; gap:14px;}
+  .tags-head h3{font-family:var(--serif-2); font-style:italic; font-weight:400; font-size:1.3rem; color:var(--muted);}
+  .tags-row{display:flex; flex-wrap:wrap; gap:14px;}
+  .tag{
+    border:1px solid var(--line-strong); padding:11px 22px; font-size:.88rem; color:var(--ink); letter-spacing:.01em;
+  }
+
+  /* ---------- Contact / business card ---------- */
+  .contact{padding:0 0 130px;}
+  .contact-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:0; border:1px solid var(--line-strong);}
+  .card-panel{
+    background:linear-gradient(155deg, #1c1a15, #15130f); padding:56px 48px; position:relative;
+  }
+  .card-panel .logo-mark{height:46px; margin-bottom:34px;}
+  .card-panel .name{font-family:var(--serif); font-size:1.7rem; margin-bottom:4px;}
+  .card-panel .role{font-family:var(--serif-2); font-style:italic; color:var(--gold-light); font-size:1rem; margin-bottom:32px;}
+  .card-line{display:flex; align-items:center; gap:14px; margin-bottom:18px;}
+  .card-line svg{width:17px; height:17px; color:var(--gold); flex-shrink:0;}
+  .card-line a, .card-line span{font-size:.94rem; color:var(--muted); text-decoration:none;}
+  .card-line a:hover{color:var(--ink);}
+
+  .form-panel{background:var(--bg-alt); padding:56px 48px; border-left:1px solid var(--line);}
+  .form-panel .eyebrow{margin-bottom:16px;}
+  .form-panel h3{font-size:1.5rem; margin-bottom:30px;}
+  .field{margin-bottom:20px;}
+  .field label{display:block; font-size:.82rem; color:var(--muted-2); margin-bottom:8px; letter-spacing:.02em;}
+  .field input, .field textarea, .field select{
+    width:100%; background:transparent; border:none; border-bottom:1px solid var(--line-strong);
+    color:var(--ink); font-family:var(--sans); font-size:.98rem; padding:10px 2px; outline:none;
+  }
+  .field select option{background:var(--bg-alt); color:var(--ink);}
+  .field input:focus, .field textarea:focus, .field select:focus{border-bottom-color:var(--gold);}
+  .field textarea{resize:vertical; min-height:90px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .submit-btn{margin-top:8px;}
+  .form-success{
+    display:none; text-align:center; padding:40px 0; font-family:var(--serif-2); font-style:italic; color:var(--gold-light); font-size:1.1rem;
+  }
+  .form-success.show{display:block;}
+  #contactForm.hidden{display:none;}
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line); padding:34px 0;}
+  .foot-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; font-size:.8rem; color:var(--muted-2);}
+  .foot-row a{text-decoration:none; color:var(--muted-2);}
+  .foot-row a:hover{color:var(--gold-light);}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px){
+    .nav-links{display:none;}
+    .menu-toggle{display:block;}
+    .hero{grid-template-columns:1fr; min-height:auto;}
+    .hero-photo{height:56vh; order:-1; border-left:none; border-bottom:1px solid var(--line-strong);}
+    .hero-copy{padding:70px 28px 70px;}
+    .stats-row{grid-template-columns:1fr 1fr;}
+    .stat{border-left:none; border-top:1px solid var(--line); padding:26px 0 0;}
+    .stat:nth-child(odd){padding-right:20px;}
+    .stat:nth-child(even){padding-left:20px; border-left:1px solid var(--line);}
+    .stat:nth-child(1), .stat:nth-child(2){border-top:none;}
+    .bio-grid{grid-template-columns:1fr; gap:26px;}
+    .contact-grid{grid-template-columns:1fr;}
+    .form-panel{border-left:none; border-top:1px solid var(--line);}
+  }
+  @media (max-width: 600px){
+    .container{padding:0 20px;}
+    .hero-copy{padding:56px 22px 56px;}
+    .stats-row{grid-template-columns:1fr 1fr; padding:36px 0;}
+    .bio{padding:70px 0;}
+    .tags-section{padding-bottom:70px;}
+    .contact{padding-bottom:80px;}
+    .card-panel, .form-panel{padding:38px 26px;}
+    .form-row{grid-template-columns:1fr;}
+    .plaque{left:16px; right:16px; bottom:16px; max-width:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav-wrap">
+    <img src="assets/logo.png" alt="Arno Diederen — Legal mediator & advocaat" class="logo-mark">
+    <nav class="nav-links" aria-label="Sectienavigatie">
+      <a href="#over">Over Arno</a>
+      <a href="#specialismen">Specialismen</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Neem contact op</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-top">
+    <img src="assets/logo.png" alt="Arno Diederen" style="height:34px;">
+    <button class="close-menu" id="closeMenu" aria-label="Sluit menu">&times;</button>
+  </div>
+  <ul>
+    <li><a href="#over">Over Arno</a></li>
+    <li><a href="#specialismen">Specialismen</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="rule"></span>MfN-registermediator &amp; advocaat</p>
+      <h1>Arno Diederen</h1>
+      <p class="hero-role">Legal mediator &amp; advocaat</p>
+      <p class="hero-desc">35 jaar ervaring als advocaat, meer dan 1.000 behandelde zaken, nationaal en internationaal. Gevestigd in Amsterdam.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-gold">Neem contact op</a>
+        <a href="tel:+31646246500" class="btn btn-line">06 46 24 65 00</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <!-- Placeholder note: replace with final high-resolution portrait when available -->
+      <img src="assets/hero.jpeg" alt="Arno Diederen, MfN-registermediator en advocaat">
+      <div class="plaque">
+        <p>"Er is altijd een oplossing te vinden." — Arno Diederen</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container stats-row">
+      <div class="stat">
+        <div class="num">35+</div>
+        <div class="lbl">jaar ervaring als advocaat (1988–2022)</div>
+      </div>
+      <div class="stat">
+        <div class="num">1.000+</div>
+        <div class="lbl">behandelde zaken</div>
+      </div>
+      <div class="stat">
+        <div class="num">25+</div>
+        <div class="lbl">jaar als MfN-registermediator</div>
+      </div>
+      <div class="stat">
+        <div class="num">NL / INT</div>
+        <div class="lbl">nationaal en internationaal actief</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIO -->
+  <section class="bio" id="over">
+    <div class="container bio-grid">
+      <div>
+        <p class="eyebrow"><span class="rule"></span>Over Arno</p>
+        <h2 style="margin-top:18px;">Een ervaren derde, al bijna vier decennia.</h2>
+      </div>
+      <div class="bio-text">
+        <p><strong>Arno Diederen</strong> is MfN-registermediator en was van 1988 tot 2022 advocaat. In die tijd begeleidde hij ruim <strong>duizend zaken</strong> — zowel nationaal als internationaal — uiteenlopend van arbeidsconflicten en echtscheidingen tot complexe zakelijke en erfrechtelijke geschillen.</p>
+        <p>Zijn achtergrond als advocaat geeft hem het juridische overzicht om complexe kwesties snel te doorzien; zijn ervaring als mediator geeft hem het vermogen om partijen echt tot elkaar te brengen. Die combinatie is zijn kracht.</p>
+        <ul class="credentials">
+          <li>MfN-registermediator</li>
+          <li>Master of Dispute Resolution (MDR)</li>
+          <li>Bestuurslid NVvMA</li>
+          <li>Docent mediation, Orde van Advocaten</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIALISMS -->
+  <section class="tags-section" id="specialismen">
+    <div class="container">
+      <div class="tags-head">
+        <p class="eyebrow"><span class="rule"></span>Specialismen</p>
+        <h3>Waar Arno in begeleidt</h3>
+      </div>
+      <div class="tags-row">
+        <span class="tag">Arbeidsrecht</span>
+        <span class="tag">Familie &amp; Echtscheiding</span>
+        <span class="tag">Erfrecht</span>
+        <span class="tag">Zakelijk &amp; Ondernemer</span>
+        <span class="tag">Internationale geschillen</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / BUSINESS CARD -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="card-panel">
+          <img src="assets/logo.png" alt="Arno Diederen" class="logo-mark">
+          <div class="name">Arno Diederen</div>
+          <div class="role">Legal mediator &amp; advocaat</div>
+
+          <div class="card-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.68 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:+31646246500">06 46 24 65 00</a>
+          </div>
+          <div class="card-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>
+            <a href="mailto:diederen@diederenmediator.nl">diederen@diederenmediator.nl</a>
+          </div>
+          <div class="card-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Hemonylaan 26, 1074 BJ Amsterdam</span>
+          </div>
+
+          <p style="margin-top:32px; font-family:var(--serif-2); font-style:italic; color:var(--muted-2); font-size:.92rem;">
+            * Contactgegevens overgenomen uit openbare bronnen — ter bevestiging door Arno voor publicatie.
+          </p>
+        </div>
+
+        <div class="form-panel">
+          <p class="eyebrow"><span class="rule"></span>Bericht sturen</p>
+          <h3>Neem contact op</h3>
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Naam</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="topic">Onderwerp</label>
+              <select id="topic" name="topic">
+                <option>Arbeidsrecht</option>
+                <option>Familie & Echtscheiding</option>
+                <option>Erfrecht</option>
+                <option>Zakelijk & Ondernemer</option>
+                <option>Internationaal</option>
+                <option>Anders</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Bericht</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold submit-btn">Versturen →</button>
+          </form>
+          <div class="form-success" id="formSuccess">Bedankt — uw bericht is verzonden. Arno neemt doorgaans binnen één werkdag contact op.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container foot-row">
+    <span>&copy; 2026 Arno Diederen Mediation.</span>
+    <span>MfN-registermediator · NVvMA</span>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenu = document.getElementById('closeMenu');
+  menuToggle.addEventListener('click', () => mobileMenu.classList.add('open'));
+  closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // Front-end only submit — needs a form backend (Formspree/Web3Forms) wired in before launch
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.classList.add('hidden');
+    success.classList.add('show');
+  });
+</script>
+
+</body>
+</html>
